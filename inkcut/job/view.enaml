@@ -494,6 +494,10 @@ enamldef MaterialDockItem(DockItem):
             Label:
                 text = QApplication.translate("job", "Plot Alignment")
             CheckBox:
+                text = QApplication.translate("job", 'Shift to origin')
+                icon = load_icon('shape_align_left')
+                checked := job.auto_shift
+            CheckBox:
                 text = QApplication.translate("job", 'Align center horizontally')
                 icon = load_icon('shape_align_center')
                 checked := job.align_center[0]
@@ -501,7 +505,6 @@ enamldef MaterialDockItem(DockItem):
                 text = QApplication.translate("job", 'Align center vertically')
                 icon = load_icon('shape_align_middle')
                 checked := job.align_center[1]
-
         Container:
             padding = 0
             constraints = [
